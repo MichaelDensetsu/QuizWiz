@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         resourcesFragment = new ResourcesFragment();
 //
 
+
 // Controllers for bottom navigation bar - changing fragments/screens
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

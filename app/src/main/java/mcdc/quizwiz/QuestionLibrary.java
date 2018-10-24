@@ -2,24 +2,64 @@ package mcdc.quizwiz;
 
 public class QuestionLibrary {
 
+    private String mTopic[] = {
+            "Agile Scrum",
+            "Lean Start-up",
+            "Design Thinking"
+    };
+
     private String mQuestions[] = {
-            "Question1",
-            "Question2",
-            "Question3",
-            "Question4"
+            // Agile Scrum 1-5
+            "What is the desired final outcome when undertaking an Agile Scrum?",
+            "What kind of sprint meeting focuses on what the team achieved during a sprint? ",
+            "Agile Development differs from Waterfall as it focuses on: ",
+            "What questions do User stories focus on? ",
+            "How do sprint members keep track of their work/progress?",
+            // Lean Start-up 6-10
+            "Lean start-up methodology focuses on creating a _______ and iterating/learning from it. ",
+            "In Lean Start-up methodology, what do you 'Measure'? ",
+            "What might you do if one of your assumptions are proven wrong? ",
+            "What is the feedback loop called in Lean Start-up Methodology? ",
+            "Lean Start-up methodology tells us that start-up success can be ________. ",
+            // Design Thinking 11-15
+            "What should you not do while 'empathising? ",
+            "Which step focuses on 'Converging on potential solutions'?",
+            "Which step focuses on creating a visual representation of your idea that your users can interact with? ",
+            "What should the 'Test' stage aim to achieve? ",
+            "What are good tools to use for the 'Empathy' stage? "
 
 
     };
 
     private String mChoices [][] = {
-            {"Answer1", "Answer2", "Answer3", "Answer4"},
-            {"Poop1","Poop2","Poop3","Poop4"},
-            {"Test1","Test2","Test3","Test4"},
-            {"Correct1","Correct2","Correct3","Correct"}
+            // Agile Scrum
+            {"Minimum Viable Product (MVP)", "Prototype", "Potentially shippable product", "Blueprint"},
+            {"Daily Scrum","Sprint Retrospective","Sprint Planning","Sprint Review"},
+            {"Processes","Planning","Incremental Iteration","Documentation"},
+            {"Who, What, Why","What, How, When","When, Where, Why","Who, How, Why"},
+            {"Sprint Planning", "Product Backlog", "User Stories", "Burndown Chart"},
+            // Lean Start-up
+            {"Company", "Finished product", "MVP", "Start-up"},
+            {"Functionality", "Customers' Reactions", "Profitability", "Quality"},
+            {"Prototype", "Perservere", "Pivot", "Performance Review"},
+            {"Build, Measure, Learn", "Build, Iterate, Deliver", "Prototype, Discover, Ideate", "Develop, Measure, Deliver"},
+            {"Fast", "Discovered", "Easy", "Taught"},
+            // Design Thinking
+            {"Observing", "Judging", "Engaging", "Listening"},
+            {"Ideate", "Empathise", "Prototype", "Define"},
+            {"Define", "Ideate", "Empathise", "Prototype"},
+            {"Gather feedback from users", "Create a final product", "Get feedback from developers", "Develop a MVP"},
+            {"Empathy maps", "Agile Scrum", "Google", "Personal Experiences"},
+
 
     };
 
-    private String mCorrectAnswers[] = {"Answer2", "Poop3", "Test4", "Correct1"};
+    private String mCorrectAnswers[] = {"Potentially shippable product", "Sprint Review", "Incremental iteration", "Who, What, Why", "Burndown Chart", "MVP", "Customers' Reactions", "Pivot", "Build, Measure, Learn", "Taught", "Judging", "Ideate", "Prototype", "Gather feedback from users", "Empathy maps"};
+
+    public String getTopic(int a) {
+        String topic = mTopic[a];
+        return topic;
+    }
 
     public String getQuestion(int a) {
         String question = mQuestions[a];
@@ -45,8 +85,6 @@ public class QuestionLibrary {
         String choice3 = mChoices[a][3];
         return choice3;
     }
-
-//
 
     public String getCorrectAnswer(int a) {
         String answer = mCorrectAnswers[a];
