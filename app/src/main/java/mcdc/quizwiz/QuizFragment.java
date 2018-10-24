@@ -15,25 +15,19 @@ import android.widget.Toast;
  * A simple {@link Fragment} subclass.
  */
 public class QuizFragment extends Fragment {
-
+// Declaring QuestionBank
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
-
+// Declaring user interface objects
     private TextView mScoreView;
     private TextView mQuestionView;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
     private Button mButtonChoice4;
-
+//Declaring variables in quiz screen
     private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0;
-
-//    public QuizFragment() {
-//
-//
-//    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,11 +38,11 @@ public class QuizFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_quiz, container, false);
 
     }
-
+// Method for updating score.
     private void updateScore(int point) {
         mScoreView.setText("" + mScore);
     }
-
+// Method for updating question.
     private void updateQuestion() {
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
         mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
@@ -75,7 +69,7 @@ public class QuizFragment extends Fragment {
             mQuestionNumber = 0;
             updateQuestion();
 
-            //Button Listeners
+            //Button Listeners - what happens when button is pressed.
 // Button 1
             mButtonChoice1.setOnClickListener(new View.OnClickListener() {
                 @Override
