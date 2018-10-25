@@ -14,13 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-// Declaring user interface objects.
+    // Declaring user interface objects.
     private BottomNavigationView mMainNav;
     private FrameLayout mMainFrame;
-// Declaring fragments.
+    // Declaring fragments.
     private ProfileFragment profileFragment;
     private QuizFragment quizFragment;
     private ResourcesFragment resourcesFragment;
+    private AboutFragment aboutFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         profileFragment = new ProfileFragment();
         quizFragment = new QuizFragment();
         resourcesFragment = new ResourcesFragment();
+        aboutFragment = new AboutFragment();
 //
 
 
@@ -59,12 +61,16 @@ public class MainActivity extends AppCompatActivity {
                         setFragment(resourcesFragment);
                         return true;
 
+                    case R.id.nav_about:
+                        mMainNav.setItemBackgroundResource(R.color.colorPrimaryDark);
+                        setFragment(aboutFragment);
+                        return true;
                     default:
                         return false;
                 }
 //
             }
-// Method for setting up which fragment to change to.
+            // Method for setting up which fragment to change to.
             private void setFragment(Fragment fragment) {
 
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
