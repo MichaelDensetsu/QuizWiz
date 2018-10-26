@@ -9,23 +9,24 @@
 
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_below="@+id/player"
-        app:layout_constraintBottom_toTopOf="@+id/main_nav"
-        app:layout_constraintTop_toBottomOf="@+id/player" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player"
+        tools:layout_editor_absoluteX="0dp" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.Toolbar>
 
 
     <com.google.android.youtube.player.YouTubePlayerView
@@ -38,28 +39,6 @@
 
     </com.google.android.youtube.player.YouTubePlayerView>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/main_nav"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/nav_item_colors"
-        app:itemTextColor="@color/nav_item_colors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/nav_items">
 
-    </android.support.design.widget.BottomNavigationView>
-
-    <FrameLayout
-        android:id="@+id/main_frame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/player">
-
-    </FrameLayout>
-
-
-    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
 

@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Welcome!"
-        app:titleMarginStart="140dp">
+        app:title="Greetings"
+        app:titleMarginStart="145dp">
 
 
     </android.support.v7.widget.Toolbar>
@@ -45,21 +45,32 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="100dp"
-            android:text="Home Page Test" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="300dp"
+            android:text="QuizWhiz is a Mobile Application developed to help UNSW INFS students revise and develop their skills and knowledge on core INFS courses and topics. QuizWhiz currently provides content for the INFS2603: Business Analysis using Design Thinking course. We hope to provide more content in the future!"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp"
+            app:srcCompat="@drawable/quiz" />
+
+
     </FrameLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="150dp"
-        android:layout_marginTop="200dp"
-        android:text="Enter"
-        android:layout_alignParentLeft="true"
-        />
+        android:layout_marginTop="450dp"
+        android:text="Enter" />
 
 </RelativeLayout>

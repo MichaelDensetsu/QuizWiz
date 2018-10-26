@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button button;
-
+    ImageView imageView;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button);
         final TextView textView = (TextView) findViewById(R.id.textView2);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        imageView = (ImageView) findViewById(R.id.imageView2);
+
 
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -59,13 +63,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-                fragmentTransaction.replace(R.id.main_frame, resourcesFragment);
+                fragmentTransaction.replace(R.id.main_frame, quizFragment);
                 fragmentTransaction.commit();
 
                 button.setVisibility(View.INVISIBLE);
                 mMainNav.setVisibility(View.VISIBLE);
                 textView.setVisibility(View.INVISIBLE);
                 toolbar.setVisibility(View.INVISIBLE);
+                imageView.setVisibility(View.INVISIBLE);
 
 
             }
