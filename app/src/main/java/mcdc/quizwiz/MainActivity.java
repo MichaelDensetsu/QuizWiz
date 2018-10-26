@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
 
     // Declaring fragments.
-    private ProfileFragment profileFragment;
     private QuizFragment quizFragment;
     private ResourcesFragment resourcesFragment;
     private AboutFragment aboutFragment;
@@ -48,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         imageView = (ImageView) findViewById(R.id.imageView2);
 
-        profileFragment = new ProfileFragment();
         quizFragment = new QuizFragment();
         resourcesFragment = new ResourcesFragment();
         aboutFragment = new AboutFragment();
@@ -81,13 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
 
-                    case R.id.nav_profile:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
-                        setFragment(profileFragment);
-                        return true;
-
                     case R.id.nav_quiz:
-                        mMainNav.setItemBackgroundResource(R.color.colorAccent);
+                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
                         setFragment(quizFragment);
                         return true;
 
