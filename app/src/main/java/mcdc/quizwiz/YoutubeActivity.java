@@ -30,7 +30,6 @@ public class YoutubeActivity extends YouTubeBaseActivity {
 
     private static final String TAG = "YoutubeActivity";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
