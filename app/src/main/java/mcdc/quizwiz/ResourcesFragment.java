@@ -48,7 +48,6 @@ public class ResourcesFragment extends Fragment {
             //Setting title for toolbar
 
             toolbar = getView().findViewById(R.id.toolbar);
-            toolbar.setTitle("INFS2603");
             toolbar.setTitle("Resources - INFS2603");
 
 

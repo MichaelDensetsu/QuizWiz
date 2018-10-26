@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="325dp"
-            android:text="    The resource content is sourced from YouTube and UNSW."
+            android:text="    The resource content in this application is sourced from YouTube and UNSW."
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
@@ -61,7 +61,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="360dp"
             android:text="Agile Scrum Video: Introduction to Scrum - 7 Minutes from YouTube channel “Uzility” Lecture Slides: UNSW INFS2603 2017 Course Lectures, LIC Dr Sandeep Mysore Seshadrinath "
             android:textAlignment="center"
             android:textColor="@android:color/black"

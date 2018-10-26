@@ -2,8 +2,6 @@ package mcdc.quizwiz;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -75,13 +73,15 @@ public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
-        Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
+
+        // If statements used to change videos played based on topic by using the toolbar title of the activity
 
         if (toolbar2.getTitle().toString().equalsIgnoreCase("Agile Scrum")) {
             youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID);
 
         } else if (toolbar2.getTitle().toString().equalsIgnoreCase("Lean Start-up")) {
             youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID2);
+
         } else youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID3);
     }
 
@@ -92,12 +92,10 @@ public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer
 
         if (youTubeInitializationResult.isUserRecoverableError()) {
             youTubeInitializationResult.getErrorDialog(this, REQUEST_CODE).show();
-        } else {
-            String errorMessage = String.format("There was an error initialising the YoutubePlayer (%1$s)", youTubeInitializationResult.toString());
-            Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
+        }
 
         }
     }
-}
+
 
 
