@@ -4,8 +4,6 @@ package mcdc.quizwiz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,38 +18,48 @@ import android.widget.ListView;
  */
 public class ResourcesFragment extends Fragment {
 
+    //Create UI elements
+
     Toolbar toolbar;
     ListView listView;
 
+
+    // Required empty public constructor
     public ResourcesFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_resources, container, false);
 
 
     }
 
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         {
 
+            //Setting title for toolbar
+
             toolbar = getView().findViewById(R.id.toolbar);
-
-
             toolbar.setTitle("INFS2603");
-
             toolbar.setTitle("Resources - INFS2603");
 
+
+            //Creating an ArrayAdapter for the Topics to put into ListView
 
             listView = getView().findViewById(R.id.listview);
 
             ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(ResourcesFragment.this.getActivity(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Topics));
+
+
+            //Create OnItemClickListener to create an intent which allows for the ResourcesFragment to transition to the appropriate Topic
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

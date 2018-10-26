@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="350dp"
-            android:text="Agile Scrum Video: Introduction to Scrum - 7 Minutes from YouTube channel “Utility” Lecture Slides: UNSW INFS2603 2017 Course Lectures, LIC Dr Sandeep Mysore Seshadrinath "
+            android:text="Agile Scrum Video: Introduction to Scrum - 7 Minutes from YouTube channel “Uzility” Lecture Slides: UNSW INFS2603 2017 Course Lectures, LIC Dr Sandeep Mysore Seshadrinath "
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textStyle="bold" />

@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".QuizActivity" />
         <activity android:name=".Weeks_Activity" />
-        <activity android:name=".YoutubeActivity" />
     </application>
 
 </manifest>

@@ -13,17 +13,18 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
+    //Declare Google API Key and Resource URL for the YoutubeAPI
 
     static final String GOOGLE_API_KEY = "AIzaSyAsWkRZuVHwVO7HkN6SjOmzHqrLdN-2Hos";
     static final String YOUTUBE_VIDEO_ID = "9TycLR0TqFA";
     static final String YOUTUBE_VIDEO_ID2 = "sobxOzRjAGg";
     static final String YOUTUBE_VIDEO_ID3 = "GFffb2H-gK0";
-
     private static final String TAG = "YoutubeActivity";
+
+    //Declare UI Elements
 
     Toolbar toolbar2;
     PDFView pdfView;
-
     YouTubePlayerView playerView;
 
     @Override
@@ -31,15 +32,12 @@ public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weeks_);
 
-
         toolbar2 = (Toolbar) findViewById(R.id.toolbar2);
-
         pdfView = (PDFView) findViewById(R.id.pdf);
-
-
         playerView = (YouTubePlayerView) findViewById(R.id.player);
 
 
+        //Create bundle and intents using Toolbar title to set the correct YouTube video and PDF for each topic
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -72,6 +70,8 @@ public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer
 
 
     }
+
+    // Mandatory methods for the YoutubePlayerAPI
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {

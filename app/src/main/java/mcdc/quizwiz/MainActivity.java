@@ -24,38 +24,36 @@ public class MainActivity extends AppCompatActivity {
     // Declaring user interface objects.
     private BottomNavigationView mMainNav;
     private FrameLayout mMainFrame;
+    Button button;
+    ImageView imageView;
+    TextView textView;
+
     // Declaring fragments.
     private ProfileFragment profileFragment;
     private QuizFragment quizFragment;
     private ResourcesFragment resourcesFragment;
     private AboutFragment aboutFragment;
 
-
-    Button button;
-    ImageView imageView;
-    TextView textView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Initialisation
+    // Initialisation
         mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
         mMainNav.setVisibility(View.INVISIBLE);
-
-        profileFragment = new ProfileFragment();
-        quizFragment = new QuizFragment();
-        resourcesFragment = new ResourcesFragment();
-        aboutFragment = new AboutFragment();
-//
-
         final Button button = (Button) findViewById(R.id.button);
         final TextView textView = (TextView) findViewById(R.id.textView2);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         imageView = (ImageView) findViewById(R.id.imageView2);
 
+        profileFragment = new ProfileFragment();
+        quizFragment = new QuizFragment();
+        resourcesFragment = new ResourcesFragment();
+        aboutFragment = new AboutFragment();
+
+    //  Set OnCLickListener to transition from Welcome screen to our Application Fragments
 
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-// Controllers for bottom navigation bar - changing fragments/screens
+     // Controllers for bottom navigation bar - changing fragments/screens
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -105,8 +103,9 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         return false;
                 }
-//
+
             }
+
             // Method for setting up which fragment to change to.
             private void setFragment(Fragment fragment) {
 
@@ -122,6 +121,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    }
+}
 
