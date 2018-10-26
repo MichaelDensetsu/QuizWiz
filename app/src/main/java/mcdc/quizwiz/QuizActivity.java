@@ -23,17 +23,20 @@ public class QuizActivity  extends AppCompatActivity {
     private Button mButtonChoice3;
     private Button mButtonChoice4;
     Toolbar toolbar;
-    //Declaring variables in quiz screen
+    // Declaring variables in quiz screen
     private String mAnswer;
-    private int mScore = 0;
+    public int mScore = 0;
     private int mQuestionNumber = 0;
+    private int mQuestionsAnswered = 0;
+    // Declaring database
+    DatabaseHelper mDatabaseHelper;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-
+// Quiz items
         mScoreView = (TextView)findViewById(R.id.score);
         mQuestionView = (TextView)findViewById(R.id.question);
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
@@ -41,10 +44,12 @@ public class QuizActivity  extends AppCompatActivity {
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
         mButtonChoice4 = (Button)findViewById(R.id.choice4);
         mScore = 0;
-
+// Toolbar name
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         toolbar.setTitle("Quiz - INFS2603");
+// Database
+        mDatabaseHelper = new DatabaseHelper(this);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -58,15 +63,15 @@ public class QuizActivity  extends AppCompatActivity {
             if (toolbar.getTitle().toString().equalsIgnoreCase("Week 3 - Design Thinking")) {
                 mQuestionNumber = 10;
             }
-
+            updateQuestion();
         }
-        updateQuestion();
 
         //Button Listeners - what happens when button is pressed.
 // Button 1
         mButtonChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mQuestionsAnswered++;
                 if (mButtonChoice1.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
@@ -82,6 +87,7 @@ public class QuizActivity  extends AppCompatActivity {
         mButtonChoice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mQuestionsAnswered++;
                 if (mButtonChoice2.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
@@ -97,6 +103,7 @@ public class QuizActivity  extends AppCompatActivity {
         mButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mQuestionsAnswered++;
                 if (mButtonChoice3.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
@@ -112,6 +119,7 @@ public class QuizActivity  extends AppCompatActivity {
         mButtonChoice4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mQuestionsAnswered++;
                 if (mButtonChoice4.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
@@ -139,7 +147,17 @@ public class QuizActivity  extends AppCompatActivity {
         mButtonChoice4.setText(mQuestionLibrary.getChoice4(mQuestionNumber));
 
         mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
-        mQuestionNumber++;
+        if ( mQuestionsAnswered == 5) {
+            finish();
+            String score = String.valueOf(mScore);
+            mDatabaseHelper.addData(score);
+            Intent results = new Intent(getApplicationContext(),ResultsActivity.class);
+            results.putExtra("Scores", score);
+            startActivity(results);
+        }
+        else {
+            mQuestionNumber++;
+        }
     }
 
 }

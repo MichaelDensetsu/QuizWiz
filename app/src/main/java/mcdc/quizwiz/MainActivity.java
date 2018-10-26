@@ -84,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
 
                     case R.id.nav_profile:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
+                        mMainNav.setItemBackgroundResource(R.color.colorAccent);
                         setFragment(profileFragment);
                         return true;
 
                     case R.id.nav_quiz:
-                        mMainNav.setItemBackgroundResource(R.color.colorAccent);
+                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
                         setFragment(quizFragment);
                         return true;
 
