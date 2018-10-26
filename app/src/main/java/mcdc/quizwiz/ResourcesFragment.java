@@ -43,7 +43,7 @@ public class ResourcesFragment extends Fragment {
 
             toolbar = getView().findViewById(R.id.toolbar);
 
-            toolbar.setTitle("INFS3634");
+            toolbar.setTitle("Resources - INFS2603");
 
             listView = getView().findViewById(R.id.listview);
 
