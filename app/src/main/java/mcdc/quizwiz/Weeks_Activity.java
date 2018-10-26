@@ -46,18 +46,18 @@ public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            toolbar2.setTitle(bundle.getString("Week"));
-            if (toolbar2.getTitle().toString().equalsIgnoreCase("Week 1")) {
+            toolbar2.setTitle(bundle.getString("Topic"));
+            if (toolbar2.getTitle().toString().equalsIgnoreCase("Agile Scrum")) {
                 YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
                 playerView.initialize(GOOGLE_API_KEY, this);
                 textView.setText("Test 1");
 
-            } else if (toolbar2.getTitle().toString().equalsIgnoreCase("Week 2")) {
+            } else if (toolbar2.getTitle().toString().equalsIgnoreCase("Lean Start-up")) {
                 YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
                 playerView.initialize(GOOGLE_API_KEY, this);
                 textView.setText("Test 2");
 
-            } else if (toolbar2.getTitle().toString().equalsIgnoreCase("Week 3")) {
+            } else if (toolbar2.getTitle().toString().equalsIgnoreCase("Design Thinking")) {
                 YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
                 playerView.initialize(GOOGLE_API_KEY, this);
                 textView.setText("Test 3");

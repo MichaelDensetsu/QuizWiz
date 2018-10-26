@@ -1,5 +1,7 @@
 package mcdc.quizwiz;
 
+import android.app.FragmentManager;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -12,8 +14,12 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+
     // Declaring user interface objects.
     private BottomNavigationView mMainNav;
     private FrameLayout mMainFrame;
@@ -23,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private ResourcesFragment resourcesFragment;
     private AboutFragment aboutFragment;
 
+
+    Button button;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 //        Initialisation
         mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
+        mMainNav.setVisibility(View.INVISIBLE);
 
         profileFragment = new ProfileFragment();
         quizFragment = new QuizFragment();
@@ -38,6 +49,27 @@ public class MainActivity extends AppCompatActivity {
         aboutFragment = new AboutFragment();
 //
 
+        final Button button = (Button) findViewById(R.id.button);
+        final TextView textView = (TextView) findViewById(R.id.textView2);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+                fragmentTransaction.replace(R.id.main_frame, resourcesFragment);
+                fragmentTransaction.commit();
+
+                button.setVisibility(View.INVISIBLE);
+                mMainNav.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.INVISIBLE);
+                toolbar.setVisibility(View.INVISIBLE);
+
+
+            }
+        });
 
 // Controllers for bottom navigation bar - changing fragments/screens
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -79,7 +111,12 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
 
             }
+
+
         });
     }
 
-}
+
+
+    }
+

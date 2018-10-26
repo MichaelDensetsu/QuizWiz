@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Welcome!"
+        app:titleMarginStart="140dp">
+
 
     </android.support.v7.widget.Toolbar>
 
@@ -24,7 +27,10 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/nav_item_colors"
         app:itemTextColor="@color/nav_item_colors"
-        app:menu="@menu/nav_items"></android.support.design.widget.BottomNavigationView>
+        app:menu="@menu/nav_items"
+        android:layout_alignParentLeft="true">
+
+    </android.support.design.widget.BottomNavigationView>
 
     <FrameLayout
         android:id="@+id/main_frame"
@@ -32,8 +38,28 @@
         android:layout_height="match_parent"
         android:layout_above="@id/main_nav"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="100dp"
+            android:text="Home Page Test" />
     </FrameLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="200dp"
+        android:text="Enter"
+        android:layout_alignParentLeft="true"
+        />
 
 </RelativeLayout>
