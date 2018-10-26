@@ -1,38 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AboutFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="About QuizWhiz">
+        android:layout_height="match_parent"
+        tools:context=".AboutFragment">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="About QuizWhiz">
 
 
-    </android.support.v7.widget.Toolbar>
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Thanks for using QuizWhiz!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        </android.support.v7.widget.Toolbar>
 
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="100dp"
+            android:text="Thanks for using QuizWhiz!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="QuizWhiz is a strictly educational mobile application developed to help UNSW students revise and refine their INFS.   QuizWhiz currently provides educational content for the INFS2603 module: Contemporary approaches to Business Analysis, which includes the topics - Agile Scrum, Lean Start-up and Design Thinking.  "
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="325dp"
+            android:text="    The resource content is sourced from YouTube and UNSW."
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:text="Agile Scrum Video: Introduction to Scrum - 7 Minutes from YouTube channel “Utility” Lecture Slides: UNSW INFS2603 2017 Course Lectures, LIC Dr Sandeep Mysore Seshadrinath "
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="425dp"
+            android:text='Lean Start-up  Video: "The Lean Startup" by Eric Ries - BOOK SUMMARY from YouTube channel “Book Video Club” Lecture Slides: UNSW INFS2603 2017 Course Lectures, LIC Dr Sandeep Mysore Seshadrinath'
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:text="Design Thinking  Video: FHIL | Stages of Design Thinking | ALL STAGES from YouTube channel “FHIL Channel” Lecture Slides: UNSW INFS2603 2017 Course Lectures, LIC Dr Sandeep Mysore Seshadrinath"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="600dp"
+            android:text="APIs and Tools Used: YoutubePlayerApi: https://developers.google.com/youtube/android/player/  PDF Viewer: https://github.com/barteksc/AndroidPdfViewer "
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="700dp"
+            android:text="QuizWhiz was developed by Dennis Chen and Michael S Chan for the UNSW INFS3634 Course, LIC Michael Cahalane."
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    </ScrollView>
