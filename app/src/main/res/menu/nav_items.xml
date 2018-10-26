@@ -11,10 +11,6 @@
         android:icon="@drawable/baseline_assignment_black_24dp"
         android:title="@string/nav_resources" />
     <item
-        android:id="@+id/nav_profile"
-        android:icon="@drawable/baseline_account_circle_black_24dp"
-        android:title="@string/nav_profile" />
-    <item
         android:id="@+id/nav_about"
         android:icon="@drawable/baseline_book_black_24dp"
         android:title="@string/nav_about" />

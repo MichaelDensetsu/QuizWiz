@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView mMainNav;
     private FrameLayout mMainFrame;
     // Declaring fragments.
-    private ProfileFragment profileFragment;
     private QuizFragment quizFragment;
     private ResourcesFragment resourcesFragment;
     private AboutFragment aboutFragment;
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
         mMainNav.setVisibility(View.INVISIBLE);
 
-        profileFragment = new ProfileFragment();
         quizFragment = new QuizFragment();
         resourcesFragment = new ResourcesFragment();
         aboutFragment = new AboutFragment();
@@ -82,11 +80,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()) {
-
-                    case R.id.nav_profile:
-                        mMainNav.setItemBackgroundResource(R.color.colorAccent);
-                        setFragment(profileFragment);
-                        return true;
 
                     case R.id.nav_quiz:
                         mMainNav.setItemBackgroundResource(R.color.colorPrimary);
