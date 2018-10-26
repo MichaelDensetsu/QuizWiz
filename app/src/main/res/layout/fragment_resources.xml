@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ResourcesFragment">
 
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,16 +17,17 @@
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="368dp"
-        android:layout_height="203dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+<<<<<<< HEAD
 
 
     <FrameLayout
@@ -41,5 +41,7 @@
 
     </FrameLayout>
 
+=======
+>>>>>>> 104a45fe1f7881ec6d213cc6d22bc1cbdb731944
 
 </RelativeLayout>

@@ -8,6 +8,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+<<<<<<< HEAD
     <string-array name="Topics">
         <item>Agile Scrum</item>
         <item>Lean Start-up</item>
@@ -19,4 +20,14 @@
     </string-array>
 
 
+=======
+    <string-array name="Weeks">
+        <item>Week 1 - Agile Scrum</item>
+        <item>Week 2 - Lean Start-up</item>
+        <item>Week 3 - Design Thinking</item>
+
+
+    </string-array>
+    <string name="title_activity_results">ResultsActivity</string>
+>>>>>>> 104a45fe1f7881ec6d213cc6d22bc1cbdb731944
 </resources>

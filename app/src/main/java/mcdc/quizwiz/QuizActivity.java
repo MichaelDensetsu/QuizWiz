@@ -1,11 +1,15 @@
 package mcdc.quizwiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 public class QuizActivity  extends AppCompatActivity {
 
@@ -18,15 +22,17 @@ public class QuizActivity  extends AppCompatActivity {
     private Button mButtonChoice2;
     private Button mButtonChoice3;
     private Button mButtonChoice4;
+    Toolbar toolbar;
     //Declaring variables in quiz screen
     private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_quiz);
 
         mScoreView = (TextView)findViewById(R.id.score);
         mQuestionView = (TextView)findViewById(R.id.question);
@@ -35,7 +41,25 @@ public class QuizActivity  extends AppCompatActivity {
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
         mButtonChoice4 = (Button)findViewById(R.id.choice4);
         mScore = 0;
-        mQuestionNumber = 0;
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        toolbar.setTitle("Quiz - INFS2603");
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            toolbar.setTitle(bundle.getString("Week"));
+            if (toolbar.getTitle().toString().equalsIgnoreCase("Week 1 - Agile Scrum")) {
+                mQuestionNumber = 0;
+            }
+            if (toolbar.getTitle().toString().equalsIgnoreCase("Week 2 - Lean Start-up")) {
+                mQuestionNumber = 5;
+            }
+            if (toolbar.getTitle().toString().equalsIgnoreCase("Week 3 - Design Thinking")) {
+                mQuestionNumber = 10;
+            }
+
+        }
         updateQuestion();
 
         //Button Listeners - what happens when button is pressed.
