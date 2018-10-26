@@ -32,14 +32,10 @@ public class Weeks_Activity extends YouTubeBaseActivity implements YouTubePlayer
 
     YouTubePlayerView playerView;
 
-
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weeks_);
-
-        getActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         toolbar2 = (Toolbar) findViewById(R.id.toolbar2);

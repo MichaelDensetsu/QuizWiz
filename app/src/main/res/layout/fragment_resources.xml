@@ -27,6 +27,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+<<<<<<< HEAD
+
 
     <FrameLayout
         android:id="@+id/main_frame"
@@ -39,5 +41,7 @@
 
     </FrameLayout>
 
+=======
+>>>>>>> 104a45fe1f7881ec6d213cc6d22bc1cbdb731944
 
 </RelativeLayout>
