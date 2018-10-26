@@ -1,39 +1,57 @@
 package mcdc.quizwiz;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class QuizFragment extends Fragment {
-
-    Toolbar toolbar;
-    ListView listView;
-
-    public QuizFragment() {
-        // Required empty public constructor
-    }
+// Declaring QuestionBank
+    private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
+// Declaring user interface objects
+    private TextView mScoreView;
+    private TextView mQuestionView;
+    private Button mButtonChoice1;
+    private Button mButtonChoice2;
+    private Button mButtonChoice3;
+    private Button mButtonChoice4;
+//Declaring variables in quiz screen
+    private String mAnswer;
+    private int mScore = 0;
+    private int mQuestionNumber = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+//
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_quiz, container, false);
 
+    }
+// Method for updating score.
+    private void updateScore(int point) {
+        mScoreView.setText("" + mScore);
+    }
+// Method for updating question.
+    private void updateQuestion() {
+        mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+        mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
+        mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
+        mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
+        mButtonChoice4.setText(mQuestionLibrary.getChoice4(mQuestionNumber));
 
+        mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
+        mQuestionNumber++;
     }
 
     @Override
@@ -41,31 +59,78 @@ public class QuizFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         {
 
-            toolbar = getView().findViewById(R.id.toolbar);
+            mScoreView = getView().findViewById(R.id.score);
+            mQuestionView = getView().findViewById(R.id.question);
+            mButtonChoice1 = getView().findViewById(R.id.choice1);
+            mButtonChoice2 = getView().findViewById(R.id.choice2);
+            mButtonChoice3 = getView().findViewById(R.id.choice3);
+            mButtonChoice4 = getView().findViewById(R.id.choice4);
+            mScore = 0;
+            mQuestionNumber = 0;
+            updateQuestion();
 
-            toolbar.setTitle("Quiz - INFS2603");
-
-            listView = getView().findViewById(R.id.listview);
-
-            ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(QuizFragment.this.getActivity(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Weeks));
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //Button Listeners - what happens when button is pressed.
+// Button 1
+            mButtonChoice1.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                    Intent intent = new Intent(QuizFragment.this.getActivity(), QuizActivity.class);
-                    intent.putExtra("Week", listView.getItemAtPosition(i).toString());
-                    startActivity(intent);
-
+                public void onClick(View view) {
+                    if (mButtonChoice1.getText() == mAnswer) {
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+                        updateQuestion();
+                        Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Wrong!", Toast.LENGTH_SHORT).show();
+                        updateQuestion();
+                    }
                 }
             });
-
-            listView.setAdapter(mAdapter);
+//Button 2
+            mButtonChoice2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mButtonChoice2.getText() == mAnswer) {
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+                        updateQuestion();
+                        Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Wrong!", Toast.LENGTH_SHORT).show();
+                        updateQuestion();
+                    }
+                }
+            });
+// Button 3
+            mButtonChoice3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mButtonChoice3.getText() == mAnswer) {
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+                        updateQuestion();
+                        Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Wrong!", Toast.LENGTH_SHORT).show();
+                        updateQuestion();
+                    }
+                }
+            });
+// Button 4
+            mButtonChoice4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mButtonChoice4.getText() == mAnswer) {
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+                        updateQuestion();
+                        Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Wrong!", Toast.LENGTH_SHORT).show();
+                        updateQuestion();
+                    }
+                }
+            });
         }
+
     }
 }
-
-
-
-
-
