@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Weeks_Activity">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player"
+        app:layout_constraintBottom_toTopOf="@+id/main_nav"
+        app:layout_constraintTop_toBottomOf="@+id/player" />
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar2"
@@ -23,42 +27,38 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="100dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/player"
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="200dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            android:layout_below="@+id/toolbar2">
 
 
         </com.google.android.youtube.player.YouTubePlayerView>
 
-        <FrameLayout
-            android:id="@+id/main_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/main_nav"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/main_nav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/nav_item_colors"
+        app:itemTextColor="@color/nav_item_colors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_items">
 
-        </FrameLayout>
+    </android.support.design.widget.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player">
+
+    </FrameLayout>
+
 
     </android.support.constraint.ConstraintLayout>
 
-</ScrollView>
